@@ -1,0 +1,231 @@
+/* Fill viewport */
+
+html,
+body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Grid layout for smaller screens */
+
+body {
+    margin: 10px 15px 10px 15px;
+    min-height: 100vh;
+    min-width: 310px;
+    display: grid;
+    grid-template-rows: 8em 5em 1fr;
+    grid-row-gap: 40px;
+    grid-template-areas: "header" "sidebar" "content";
+}
+
+
+/* Header properties for smaller screens */
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: 2fr 2fr 1fr;
+    grid-row-gap: 5px;
+    /* This property cent-ers grid items along row axis(new in grid layout) */
+    justify-items: center;
+    grid-template-areas: "logo" "name" "breakline";
+}
+
+
+/* Logo */
+
+header img {
+    grid-area: logo;
+    max-width: 80px;
+}
+
+.name {
+    grid-area: name;
+    text-align: center;
+    font-size: 14px;
+}
+
+h1,
+h4 {
+    font-weight: normal;
+    color: #423c3c;
+    margin: 0 0 5px 0;
+}
+
+
+/* Breakline after header */
+
+hr {
+    grid-area: breakline;
+    width: 100%;
+    height: 2px;
+    background-color: #867f7f;
+}
+
+
+/* Sidebar properties */
+
+aside {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.sidebar {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Sidebar content text */
+
+.sidebar p {
+    margin-top: 55px;
+    margin-left: -13px;
+    font-size: 14px;
+    color: #757272;
+}
+
+
+/* Sidebar content box colors */
+
+.one {
+    background-color: #02b3e4;
+}
+
+.two {
+    background-color: #2d3c49;
+}
+
+.three {
+    background-color: #7d97ad;
+}
+
+
+/* Main content properties */
+
+main {
+    grid-area: content;
+}
+
+.main img {
+    max-width: 100%;
+}
+
+
+/* Text decoration below primary image */
+
+#featured {
+    font-family: monospace;
+    font-size: 23px;
+    color: #757272;
+    margin-top: 15px;
+    margin-left: 4px;
+}
+
+
+/* Featured articles */
+
+.featured {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.featured .art {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+
+/* Articles images */
+
+.art img {
+    width: 100%;
+}
+
+
+/* Article text */
+
+.art>h4 {
+    text-align: center;
+}
+
+.art>p {
+    text-align: center;
+}
+
+.project {
+    font-size: 30px;
+    margin: 5px 0px 0px 0px;
+}
+
+.url {
+    font-size: 10px;
+    margin: 0px;
+}
+
+
+/* Layout for larger screens */
+
+@media only screen and (min-width: 586px) {
+    /* Shift sidebar to left */
+    body {
+        margin: 30px 50px 30px 50px;
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 7em 1fr;
+        grid-row-gap: 0;
+        grid-template-areas: "header header" "sidebar content";
+    }
+    /* Add header columns */
+    header {
+        grid-template-columns: 15% 1fr 3fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "empty logo name" "empty breakline breakline";
+        justify-items: initial;
+    }
+    hr {
+        grid-area: breakline;
+    }
+    .name {
+        text-align: right;
+        font-size: 17px;
+    }
+    /* Realign sidebar contents in rows */
+    aside {
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 100px);
+        margin: 0;
+    }
+    .main img {
+        margin-top: 14px;
+    }
+    .featured .art {
+        width: 30%;
+        margin-right: 10px;
+    }
+}
+
+
+/* Layout on tablet devices */
+
+@media only screen and (min-width: 450px) and (max-width: 734px) {
+    /* Reduce font size */
+    .name {
+        font-size: 14px;
+    }
+    .featured .art {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 735px) and (max-width: 1032px) {
+    .featured .art {
+        width: 47%;
+    }
+}

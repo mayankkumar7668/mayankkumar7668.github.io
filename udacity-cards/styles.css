@@ -1,0 +1,35 @@
+#facts {
+    font-style: italic;
+}
+
+.labels {
+    font-weight: bold;
+}
+
+#list {
+    list-style-type: none;
+    padding: 0px 0px 0px 0px;
+}
+
+.data {
+    border: 1px solid lightgreen;
+    padding: 0px 10px 5px 10px;
+    margin: 13px 0px 5px 0px;
+}
+
+.main {
+    border: 1px solid lightskyblue;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 5px 5px rgb(235, 235, 235);
+    width: 300px;
+    border-radius: 10px;
+}
+
+.profile {
+    letter-spacing: 0.4px;
+}
+
+.image {
+    width: 300px;
+    border: 1px solid lightseagreen;
+}
